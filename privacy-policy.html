@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Claudometer — Privacy Policy</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #0f0f0f; color: #ccc;
+    padding: 60px 24px; min-height: 100vh;
+  }
+  .wrap { max-width: 640px; margin: 0 auto; }
+  .logo { font-size: 24px; font-weight: 900; color: #fff; margin-bottom: 4px; }
+  .logo span { color: #f97316; }
+  .sub { font-size: 13px; color: #555; margin-bottom: 48px; }
+  h1 { font-size: 28px; font-weight: 800; color: #fff; margin-bottom: 8px; }
+  .updated { font-size: 12px; color: #555; margin-bottom: 40px; }
+  h2 { font-size: 16px; font-weight: 700; color: #fff; margin: 32px 0 10px; }
+  p { font-size: 14px; line-height: 1.8; color: #999; margin-bottom: 12px; }
+  ul { padding-left: 20px; margin-bottom: 12px; }
+  li { font-size: 14px; line-height: 1.8; color: #999; margin-bottom: 4px; }
+  .highlight { background: #1a1a1a; border-left: 3px solid #f97316; padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 24px 0; }
+  .highlight p { color: #ccc; margin: 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="logo">Claud<span>o</span>meter</div>
+  <div class="sub">Chrome Extension</div>
+
+  <h1>Privacy Policy</h1>
+  <div class="updated">Last updated: May 2026</div>
+
+  <div class="highlight">
+    <p>The short version: Claudometer collects nothing, stores nothing externally, and sends no data anywhere. Everything stays in your browser.</p>
+  </div>
+
+  <h2>What Claudometer does</h2>
+  <p>Claudometer is a Chrome extension that reads your Claude.ai session usage data and displays it as a colour-coded icon in your browser toolbar. It tells you how much of your 5-hour session, weekly allowance, and (where applicable) weekly Opus allowance you have used.</p>
+
+  <h2>Data we collect</h2>
+  <p>We collect no data whatsoever. Claudometer does not:</p>
+  <ul>
+    <li>Collect, store, or transmit any personal information</li>
+    <li>Read your Claude conversations or messages</li>
+    <li>Track your browsing activity</li>
+    <li>Use analytics or crash reporting tools</li>
+    <li>Connect to any third-party servers</li>
+    <li>Require an account or sign-up</li>
+  </ul>
+
+  <h2>How it accesses Claude data</h2>
+  <p>Claudometer reads your Claude.ai usage statistics by calling the same internal API endpoint that Claude's own settings page uses (<code>claude.ai/api/organizations/{id}/usage</code>). Your existing browser login session authenticates this request automatically — the extension code never reads, stores, or transmits your session cookie. The browser handles authentication the same way it does for any normal webpage request.</p>
+
+  <h2>What is stored locally</h2>
+  <p>The only data stored on your device (using Chrome's local storage API) is:</p>
+  <ul>
+    <li>Your Claude organisation ID — a non-personal identifier used to avoid repeated API lookups, cached for 24 hours</li>
+    <li>The last fetched usage percentages — used to display data in the popup without an additional network request</li>
+  </ul>
+  <p>This data never leaves your device and can be cleared at any time via the "Reset org cache" button in the extension popup, or by uninstalling the extension.</p>
+
+  <h2>Permissions</h2>
+  <p>Claudometer requests only two browser permissions:</p>
+  <ul>
+    <li><strong>storage</strong> — to save the organisation ID and last-known usage data locally on your device</li>
+    <li><strong>alarms</strong> — to trigger a usage check every 60 seconds using Chrome's built-in timer system</li>
+  </ul>
+  <p>The extension also declares host access to <strong>claude.ai</strong> only, so it can make API requests to that domain. It has no access to any other website.</p>
+
+  <h2>Third parties</h2>
+  <p>Claudometer has no backend server, no analytics service, no advertising, and no third-party integrations of any kind. No data is shared with or sold to any third party.</p>
+
+  <h2>Children's privacy</h2>
+  <p>Claudometer does not knowingly collect any information from anyone, including children under the age of 13.</p>
+
+  <h2>Changes to this policy</h2>
+  <p>If this policy changes, the updated version will be posted here with a revised date. Given the nature of the extension, significant changes are unlikely.</p>
+
+  <h2>Contact</h2>
+  <p>If you have any questions about this privacy policy, you can reach us through the Chrome Web Store listing page.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1280px; height: 800px; overflow: hidden;
+    background: #0a0a0a;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    display: flex; flex-direction: column;
+  }
+
+  /* Fake Chrome toolbar */
+  .toolbar {
+    height: 56px; background: #1e1e1e;
+    border-bottom: 1px solid #333;
+    display: flex; align-items: center;
+    padding: 0 16px; gap: 12px; flex-shrink: 0;
+  }
+  .nav-btns { display: flex; gap: 8px; }
+  .nav-btn {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: #2a2a2a; border: none;
+    display: flex; align-items: center; justify-content: center;
+    color: #666; font-size: 14px;
+  }
+  .address-bar {
+    flex: 1; height: 32px; background: #2a2a2a;
+    border-radius: 16px; display: flex; align-items: center;
+    padding: 0 14px; gap: 8px; max-width: 600px; margin: 0 auto;
+  }
+  .lock { color: #4ade80; font-size: 12px; }
+  .url { color: #aaa; font-size: 13px; }
+  .ext-area { display: flex; align-items: center; gap: 6px; margin-left: auto; }
+  .ext-icon {
+    width: 28px; height: 28px; border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 900; color: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  }
+  .puzzle { width: 28px; height: 28px; background: #2a2a2a; border-radius: 6px; display:flex; align-items:center; justify-content:center; color:#666; font-size:14px; }
+
+  /* Main content */
+  .content {
+    flex: 1; display: flex; align-items: center; justify-content: center;
+    gap: 80px; padding: 40px;
+  }
+
+  /* Left — headline */
+  .left { flex: 1; max-width: 480px; }
+  .eyebrow {
+    font-size: 13px; font-weight: 700; color: #f97316;
+    text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 16px;
+  }
+  .headline {
+    font-size: 52px; font-weight: 900; color: #fff;
+    line-height: 1.1; letter-spacing: -1.5px; margin-bottom: 20px;
+  }
+  .headline span { color: #f97316; }
+  .sub { font-size: 18px; color: #666; line-height: 1.6; }
+
+  /* Right — 3 icon states */
+  .states { display: flex; flex-direction: column; gap: 28px; }
+  .state-row { display: flex; align-items: center; gap: 20px; }
+  .big-circle {
+    width: 80px; height: 80px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 26px; font-weight: 900; color: white;
+    flex-shrink: 0;
+  }
+  .gc { background: #16a34a; box-shadow: 0 0 32px rgba(22,163,74,0.5); }
+  .ac { background: #d97706; box-shadow: 0 0 32px rgba(217,119,6,0.5); }
+  .rc { background: #dc2626; box-shadow: 0 0 32px rgba(220,38,38,0.5); }
+  .state-info {}
+  .state-name { font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+  .state-range { font-size: 14px; color: #555; }
+  .gtext { color: #4ade80; }
+  .atext { color: #fbbf24; }
+  .rtext { color: #f87171; }
+</style>
+</head>
+<body>
+  <div class="toolbar">
+    <div class="nav-btns">
+      <div class="nav-btn">←</div>
+      <div class="nav-btn">→</div>
+      <div class="nav-btn">↻</div>
+    </div>
+    <div class="address-bar">
+      <span class="lock">🔒</span>
+      <span class="url">claude.ai</span>
+    </div>
+    <div class="ext-area">
+      <div class="puzzle">🧩</div>
+      <div class="ext-icon gc" style="font-size:13px;">42</div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="left">
+      <div class="eyebrow">Chrome Extension</div>
+      <div class="headline">Claud<span>o</span>meter</div>
+      <div class="sub">Know exactly how much of your Claude session you've used — just by glancing at your toolbar. No clicking. No navigating away.</div>
+    </div>
+
+    <div class="states">
+      <div class="state-row">
+        <div class="big-circle gc">42</div>
+        <div class="state-info">
+          <div class="state-name gtext">All good</div>
+          <div class="state-range">Under 70% · keep going</div>
+        </div>
+      </div>
+      <div class="state-row">
+        <div class="big-circle ac">75</div>
+        <div class="state-info">
+          <div class="state-name atext">Heads up</div>
+          <div class="state-range">70–89% · getting close</div>
+        </div>
+      </div>
+      <div class="state-row">
+        <div class="big-circle rc">93</div>
+        <div class="state-info">
+          <div class="state-name rtext">Almost out</div>
+          <div class="state-range">90%+ · wrap it up</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
